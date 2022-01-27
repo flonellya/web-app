@@ -42,7 +42,7 @@ pipeline{
 		stage('Deployment'){
 			steps{
 				sh "echo ready for Predeployment"
-				sh "docker run --name myapp -d -p 8000:8080 devopstestimage/web-application"
+				sh "docker run --name myapplication -d -p 8000:8080 devopstestimage/web-application"
 			}
 		}
 		stage('message'){

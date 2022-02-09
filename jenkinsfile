@@ -34,15 +34,15 @@ pipeline{
 		}
 		stage('Predeployment'){
 			steps{
-				sh "docker build -t devopstestimage/web-application ."
+				sh "docker build -t devopstestimage/webbapp ."
 				sh "docker login -u devopstestimage -p florence1"
-				sh "docker push devopstestimage/web-application"
+				sh "docker push devopstestimage/webbapp"
 			}
 		}
 		stage('Deployment'){
 			steps{
 				sh "echo ready for Predeployment"
-				sh "docker run --name myapplication -d -p 8000:8080 devopstestimage/web-application"
+				sh "docker run --name myapple -d -p 8000:8080 devopstestimage/webbapp"
 			}
 		}
 		stage('message'){
